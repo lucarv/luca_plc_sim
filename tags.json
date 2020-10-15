@@ -1,6 +1,12 @@
 [
     {
-        "nodeId": "s=010",
+        "nodeId": "s=plcID",
+        "browseName": "Application ID",
+        "dataType": "String",
+        "value": "lucaMAC"
+    },
+    {
+        "nodeId": "i=010",
         "browseName": "SomeInt32",
         "dataType": "Int32",
         "func": "seed + 1",

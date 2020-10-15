@@ -50,7 +50,8 @@ const addTags = () => {
                     var idx = tags.findIndex(i => i.nodeId === nodeId);
                     if (tags[idx].hasOwnProperty('func')) {
                         value = eval(func)
-                    }
+                    } else value = tags[idx].value;
+
                     console.log(`value calculated for ${nodeId}: ${value}`);
                     return new opcua.Variant({
                         dataType: dataType,
