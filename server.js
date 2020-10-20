@@ -1,35 +1,19 @@
-require('dotenv').config()
-if (process.env.SENSE) {
-    var senseHatData = {
-        "pressure": 0.00001
-    }
-    var senselib = require('./senselib');
-    var senseHatLoop = setInterval(readSense, 1000);
-}
+require('dotenv').config();
 
 const os = require('os')
 const opcua = require("node-opcua");
 const tags = require('./tags.json');
 var addressSpace, namespace;
-// Let's create an instance of OPCUAServer
-var host = process.env.HOST
-var port = process.env.PORT
-var resourcePath = process.env.RESOURCEPATH
-
-const readSense = async () => {
-    try {
-        senseHatData = await senselib.getData();
-    } catch (e) {
-        console.log(e);
-    }
-}
+var host = process.env.HOST;
+var port = process.env.PORT;
+var resourcePath = process.env.RESOURCEPATH;
 
 const server = new opcua.OPCUAServer({
     alternateHostname: host,
     port: port, // the port of the listening socket of the server
     resourcePath: resourcePath, // this path will be added to the endpoint resource name
     buildInfo: {
-        productName: "hbvu simple server",
+        productName: "NODE-OPCUA server",
         buildNumber: "7658",
         buildDate: new Date(2020, 6, 8)
     }

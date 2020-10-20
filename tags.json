@@ -42,12 +42,5 @@
         "browseName": "Random Int32 Number",
         "dataType": "Int32",
         "func": "parseInt((Math.random() * 100), 10)"
-    },
-    {
-        "nodeId": "s=pressure",
-        "browseName": "Pressure",
-        "dataType": "Double",
-        "seed": "sense",
-        "func": "senseHatData.pressure"
     }
 ]
