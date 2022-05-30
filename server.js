@@ -46,7 +46,7 @@ const addTags = () => {
     console.log('..               Adding TAGS               ..')
     console.log('.............................................')
     const device = namespace.addFolder("ObjectsFolder", {
-      browseName: "RaspberryPi 3 on Attic"
+      browseName: "node opcua in an azure container instance"
     });
   
 
