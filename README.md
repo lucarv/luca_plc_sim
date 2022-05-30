@@ -33,9 +33,8 @@ This script will let you simulate a PLC by entering tags on the tags.json file.
 3. Create one (or more) Container Instances (below is an example)
 
 ```
-az container create --resource-group YOUR_RG_NAME ddmstatusapp --image YOUR_IMAGE_LOCATION_IN_ITS_REGISTRY --cpu 1 --memory 1 --registry-login-server YOUR_REGISTRY_URL --registry-username YOUR_REGISTRY_USERNAME --registry-password YOUR_REGISTRY_PASSWORD --dns-name-label A_LABEL_FOR_DNS --environmental-variables HOSTNAME=THE_DNS_LABEL_YOU_CHOSE.azurecontainer.io RESOURCEPATH=A_FOLDER_FOR_YOUR_TAGS
+az container create --resource-group YOUR_RG_NAME --name ddmstatusapp --image YOUR_IMAGE_LOCATION_IN_ITS_REGISTRY --cpu 1 --memory 1 --registry-login-server YOUR_REGISTRY_URL --registry-username YOUR_REGISTRY_USERNAME --registry-password YOUR_REGISTRY_PASSWORD --dns-name-label A_LABEL_FOR_DNS --environment-variables HOSTNAME=THE_DNS_LABEL_YOU_CHOSE.azurecontainer.io RESOURCEPATH=A_FOLDER_FOR_YOUR_TAGS
 
-e.g. az container create --resource-group lucaRG ddmstatusapp --image lucarv.azurecr.io/simple_opcua_server --cpu 1 --memory 1 --registry-login-server lucarv.azurecr.io --registry-username lucarv --registry-password {this is a password but not the real one} --dns-name-label luca-opcua-sim --environmental-variables HOSTNAME=luca-opcua-sim.azurecontainer.io RESOURCEPATH=/lucaPLC
  
 ```
 ### Extra note
