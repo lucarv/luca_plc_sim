@@ -4,11 +4,10 @@ const opcua = require("node-opcua");
 const tags = require('./tags.json');
 var addressSpace, namespace;
 // Let's create an instance of OPCUAServer
-var host='192.168.1.14'
-var port=48000
-var resourcePath = '/UA/dexter'
+var host=process.env.HOST
+var port=process.env.PORT
+var resourcePath = '/UA/lucaPLC'
 var storedValues = [];
-const hostname = os.hostname();
 
 console.log('\n.............................................');
 console.log("..       Initializing OPC-UA server        ..");
