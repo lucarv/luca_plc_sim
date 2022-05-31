@@ -32,10 +32,10 @@
         "func": "os.loadavg()[1]"
     },
     {
-        "nodeId": "s=doublerandom",
-        "browseName": "Random Double Number",
+        "nodeId": "s=torque",
+        "browseName": "Torque",
         "dataType": "Double",
-        "func": "Math.random()"
+        "func": "let i = Math.random(); if (Math.round(i * 1000) %17 == 0) { i += 10; } i"
     },
     {
         "nodeId": "s=integerrandom",

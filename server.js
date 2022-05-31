@@ -4,8 +4,8 @@ const opcua = require("node-opcua");
 const tags = require('./tags.json');
 var addressSpace, namespace;
 // Let's create an instance of OPCUAServer
-var host=process.env.HOST
-var port=process.env.PORT
+var host = process.env.HOST
+var port = process.env.PORT
 var resourcePath = '/UA/lucaPLC'
 var storedValues = [];
 
@@ -46,9 +46,9 @@ const addTags = () => {
     console.log('..               Adding TAGS               ..')
     console.log('.............................................')
     const device = namespace.addFolder("ObjectsFolder", {
-      browseName: "node opcua in an azure container instance"
+        browseName: "node opcua in an azure container instance"
     });
-  
+
 
     for (var i = 0; i < tags.length; i++) {
 
@@ -59,7 +59,7 @@ const addTags = () => {
         let seed = 0
         if (tags[i].hasOwnProperty(seed))
             seed = tags[i].seed
-	storedValues.push(tags[i].storedValue);
+        storedValues.push(tags[i].storedValue);
         let value = 0;
 
         namespace.addVariable({
