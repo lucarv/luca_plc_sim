@@ -1,5 +1,3 @@
-
-
 require('dotenv').config()
 const os = require('os')
 const opcua = require("node-opcua");
@@ -83,7 +81,6 @@ const addTags = () => {
         browseName: "node opcua in an azure container instance"
     });
 
-    console.log('..     Adding a sine function generator    ..');
     const sine = namespace.addVariable({
         componentOf: device,
 	nodeId: "ns=1;s=sine",
@@ -91,10 +88,11 @@ const addTags = () => {
         dataType: "Double",
         minimumSamplingInterval: 100,
     });
+
     // change every 1000 ms
+
     const stimerId = setInterval(() => { let val = generate_sine(); sine.setValueFromSource({ dataType: opcua.DataType.Double, value: val }) }, 1000);
 
-    console.log('..    Adding a cosine function generator   ..');
     const cosine = namespace.addVariable({
         componentOf: device,
         nodeId: "ns=1;s=cosine",
@@ -102,10 +100,10 @@ const addTags = () => {
         dataType: "Double",
         minimumSamplingInterval: 100,
     });
+
     // change every 1000 ms
     const ctimerId = setInterval(() => { let val = generate_cosine(); cosine.setValueFromSource({ dataType: opcua.DataType.Double, value: val }) }, 1000);
 
-    console.log('..         Adding a torque variable        ..');
     const torque = namespace.addVariable({
         componentOf: device,
         nodeId: "ns=1;s=torque",
@@ -113,10 +111,10 @@ const addTags = () => {
         dataType: "Double",
         minimumSamplingInterval: 100,
     });
+
     // change every 1000 ms
     const ttimerId = setInterval(() => { let val = generate_torque(); torque.setValueFromSource({ dataType: opcua.DataType.Double, value: val }) }, 1000);
 
-    console.log('..         Adding a product counter        ..');
     const prodcounter = namespace.addVariable({
         componentOf: device,
         nodeId: "ns=1;s=prodcounter",

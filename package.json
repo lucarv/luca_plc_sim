@@ -12,8 +12,7 @@
   "dependencies": {
     "debug": "^4.1.1",
     "dotenv": "^8.1.0",
-    "node-opcua": "^0.7.1",
-    "os": "^0.1.1",
-    "serialport": "^8.0.7"
+    "node-opcua": "^2.67.0",
+    "os": "^0.1.1"
   }
 }

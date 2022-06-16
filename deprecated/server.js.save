@@ -1,5 +1,4 @@
 
-
 require('dotenv').config()
 const os = require('os')
 const opcua = require("node-opcua");
@@ -84,6 +83,7 @@ const addTags = () => {
     });
 
     console.log('..     Adding a sine function generator    ..');
+    console.log('..     (ns=1;s=sine)                       ..');
     const sine = namespace.addVariable({
         componentOf: device,
 	nodeId: "ns=1;s=sine",
@@ -95,6 +95,7 @@ const addTags = () => {
     const stimerId = setInterval(() => { let val = generate_sine(); sine.setValueFromSource({ dataType: opcua.DataType.Double, value: val }) }, 1000);
 
     console.log('..    Adding a cosine function generator   ..');
+    console.log('..     (ns=1;s=cosine)                     ..');
     const cosine = namespace.addVariable({
         componentOf: device,
         nodeId: "ns=1;s=cosine",
@@ -106,6 +107,7 @@ const addTags = () => {
     const ctimerId = setInterval(() => { let val = generate_cosine(); cosine.setValueFromSource({ dataType: opcua.DataType.Double, value: val }) }, 1000);
 
     console.log('..         Adding a torque variable        ..');
+    console.log('..         (ns=1;s=torque)                 ..');
     const torque = namespace.addVariable({
         componentOf: device,
         nodeId: "ns=1;s=torque",
@@ -117,6 +119,7 @@ const addTags = () => {
     const ttimerId = setInterval(() => { let val = generate_torque(); torque.setValueFromSource({ dataType: opcua.DataType.Double, value: val }) }, 1000);
 
     console.log('..         Adding a product counter        ..');
+    console.log('..         (ns=1;s=prodcounter             ..');
     const prodcounter = namespace.addVariable({
         componentOf: device,
         nodeId: "ns=1;s=prodcounter",

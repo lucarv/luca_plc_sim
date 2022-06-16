@@ -1,0 +1,26 @@
+[
+    {
+        "nodeId": "s=sinoide",
+        "browseName": "Sin Func",
+        "dataType": "Double",
+        "func": "let a = 0; let sina = Math.sin(a * (Math.PI / 180)); a += 15; if (a > 360) a = 0;  sina"
+    },
+    {
+        "nodeId": "s=cosinoide",
+        "browseName": "Cos Func",
+        "dataType": "Double",
+        "func": "let a = 0; let cosa = Math.cos(a * (Math.PI / 180)); a += 15; if (a > 360) a = 0;  cosa"
+    },
+    {
+        "nodeId": "s=counter",
+        "browseName": "Product Counter",
+        "dataType": "Int32",
+        "func": "let i = Math.random(); let c = 0; if (Math.round(i * 1000) %7 == 0) { c += 1; } c"
+    },
+   {
+        "nodeId": "s=torque",
+        "browseName": "Torque",
+        "dataType": "Double",
+        "func": "let i = Math.random(); if (Math.round(i * 1000) %191 == 0) { i *= 10; } i"
+    }
+]
